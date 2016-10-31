@@ -1,7 +1,7 @@
 package ca.joneshousehold.expensetrackingspring.web.services;
 
-import ca.joneshousehold.expensetrackingspring.web.model.Category;
-import ca.joneshousehold.expensetrackingspring.web.model.Expense;
+import ca.joneshousehold.expensetrackingspring.web.model.CategoryDTO;
+import ca.joneshousehold.expensetrackingspring.web.model.ExpenseDTO;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.springframework.stereotype.Service;
@@ -15,30 +15,30 @@ import java.util.List;
 @Service
 public class ExpenseService {
 
-    public List<Expense> getExpenses() {
+    public List<ExpenseDTO> getExpenses() {
         return Collections.singletonList(getFakeExpense());
     }
 
-    public Expense getExpense(String id) {
+    public ExpenseDTO getExpense(String id) {
         return getFakeExpense();
     }
 
-    public Expense createExpense(Expense newExpense) {
+    public ExpenseDTO createExpense(ExpenseDTO newExpense) {
         return getFakeExpense();
     }
 
-    public Expense updateExpense(String id, Expense updatedExpense) {
+    public ExpenseDTO updateExpense(String id, ExpenseDTO updatedExpense) {
         return getFakeExpense();
     }
 
-    public Expense deleteExpense(String id) {
+    public ExpenseDTO deleteExpense(String id) {
         return getFakeExpense();
     }
 
-    private Expense getFakeExpense() {
-        return new Expense(
+    private ExpenseDTO getFakeExpense() {
+        return new ExpenseDTO(
                 "abc",
-                new Category("xyz", "test", "test"),
+                new CategoryDTO("xyz", "test", "test"),
                 new DateTime(1000, DateTimeZone.UTC),
                 10.00,
                 "miovision",

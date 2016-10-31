@@ -1,6 +1,6 @@
 package ca.joneshousehold.expensetrackingspring.web.controllers;
 
-import ca.joneshousehold.expensetrackingspring.web.model.Category;
+import ca.joneshousehold.expensetrackingspring.web.model.CategoryDTO;
 import ca.joneshousehold.expensetrackingspring.web.services.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,27 +20,27 @@ public class CategoryController {
     }
 
     @RequestMapping(value = "categories", method = RequestMethod.GET)
-    public List<Category> getCategories() {
+    public List<CategoryDTO> getCategories() {
         return categoryService.getCategories();
     }
 
     @RequestMapping(value = "categories", method = RequestMethod.POST)
-    public Category createCategory(@RequestBody Category category) {
+    public CategoryDTO createCategory(@RequestBody CategoryDTO category) {
         return categoryService.createCategory(category);
     }
 
     @RequestMapping(value = "categories/{id}", method = RequestMethod.GET)
-    public Category getCategory(@PathVariable String id) {
+    public CategoryDTO getCategory(@PathVariable String id) {
         return categoryService.getCategory(id);
     }
 
     @RequestMapping(value = "categories/{id}", method = RequestMethod.PUT)
-    public Category updateCategory(@PathVariable String id, @RequestBody Category category) {
+    public CategoryDTO updateCategory(@PathVariable String id, @RequestBody CategoryDTO category) {
         return categoryService.updateCategory(id, category);
     }
 
     @RequestMapping(value = "categories/{id}", method = RequestMethod.DELETE)
-    public Category deleteCategory(@PathVariable String id) {
+    public CategoryDTO deleteCategory(@PathVariable String id) {
         return categoryService.archiveCategory(id);
     }
 }

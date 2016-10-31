@@ -4,15 +4,15 @@ import lombok.AccessLevel;
 import org.joda.time.DateTime;
 
 /**
- * Expense DTO.
+ * ExpenseDTO DTO.
  */
 @lombok.Getter
 @lombok.Setter
 @lombok.AllArgsConstructor
 @lombok.NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Expense {
+public class ExpenseDTO {
     private String id;
-    private Category category;
+    private CategoryDTO category;
     private DateTime date;
     private double amount;
     private String place;
