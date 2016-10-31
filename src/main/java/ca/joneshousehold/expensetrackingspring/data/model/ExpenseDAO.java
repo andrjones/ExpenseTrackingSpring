@@ -14,7 +14,6 @@ import javax.persistence.*;
 @Table(name = "Expenses")
 @lombok.Getter
 @lombok.Setter
-@lombok.AllArgsConstructor
 public class ExpenseDAO extends TimeStampedEntity {
 
     @Id
@@ -29,6 +28,14 @@ public class ExpenseDAO extends TimeStampedEntity {
     private double amount;
     private String place;
     private String note;
+
+    public ExpenseDAO(CategoryDAO category, DateTime date, double amount, String place, String note) {
+        this.category = category;
+        this.amount = amount;
+        this.place = place;
+        this.note = note;
+        this.setDate(date);
+    }
 
     public DateTime getDate() {
         return this.date.toDateTime(DateTimeZone.UTC);

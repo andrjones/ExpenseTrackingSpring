@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table(name = "Categories")
 @lombok.Getter
 @lombok.Setter
-@lombok.AllArgsConstructor
+@lombok.NoArgsConstructor
 public class CategoryDAO  extends TimeStampedEntity {
 
     @Id

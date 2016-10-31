@@ -1,10 +1,12 @@
 package ca.joneshousehold.expensetrackingspring.web.controllers;
 
 import ca.joneshousehold.expensetrackingspring.web.model.CategoryDTO;
+import ca.joneshousehold.expensetrackingspring.web.model.CategoryNotFoundException;
 import ca.joneshousehold.expensetrackingspring.web.services.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * REST API endpoints for resource: Categories.
